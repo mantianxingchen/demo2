@@ -21,6 +21,6 @@ urlpatterns = [
     url(r'^post/edit/', post_views.edit),
     url(r'^post/delete/', post_views.delete),
     url(r'^post/read/', post_views.read),
-    url(r'^post/list/', post_views.list),
+    url(r'^$', post_views.list),
     url(r'^post/search/', post_views.search),
 ]

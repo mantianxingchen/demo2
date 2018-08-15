@@ -35,7 +35,10 @@ def read(request):
     return render(request, 'read.html', {'post':post})
 
 def list(request):
-    return render(request, 'list.html', {})
+    posts = Post.objects.all()
+    return render(request, 'list.html', {'posts':posts})
 
 def search(request):
-    return render(request, 'search.html', {})
+    keyword = request.POST.get('keyword')
+    posts = Post.objects.filter(content__contains=keyword)
+    return render(request, 'search.html', {'posts':posts})
